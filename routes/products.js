@@ -22,17 +22,18 @@ router.get('/listar/:id', (req, res) => {
     }
 })
 
-
+//TODO Falta implementar bien el borrar
 router.delete('/borrar/:id', (req, res) => {
     
     //Solicito a la class Productos la totalidad de la lista de productos
     res.json({Productos: productos.borrar()});
 })
 
+//TODO Falta implementar bien el actualizar
 router.put('/actualizar/:id', (req, res) => {
-    
+    console.log(req.body)
     //Solicito a la class Productos la totalidad de la lista de productos
-    res.json({Productos: productos.actualizar()});
+    res.json({Productos: productos.actualizar(req.body)});
 })
 
 

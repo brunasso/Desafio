@@ -46,6 +46,7 @@ class Productos {
         return elProducto;
     }
 
+    //TODO Falta implementar bien el borrar
     borrar(idProducto){
         let elProducto = this.productos.filter((product) =>  { return product.id == idProducto})
         this.productos.splice(this.productos.indexOf(elProducto), 1)
@@ -54,12 +55,16 @@ class Productos {
     }
 
 
-    actualizar(idProducto){
-        let elProducto = this.productos.filter((product) =>  { 
-            if (product.id == idProducto) { 
+    //TODO Falta implementar bien el actualizar
+    actualizar(actualizarProducto){
+        let idProducto = actualizarProducto.id;
+        this.productos.map((producto) => {
+            if (idProducto == producto.id) {
+                producto = Object.assign(producto, actualizarProducto);
+                
             }
+            return producto;
         });
-        return elProducto;
     }
 }
 
